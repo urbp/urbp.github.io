@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Web Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        #menuBar {
+            background-color: #1A1A1A;
+            color: #F0F0F0;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+        }
+        #logo {
+            height: 40px;
+            margin-right: 20px;
+        }
+        .nav-link {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #F0F0F0;
+        }
+        #content {
+            margin-top: 60px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="menuBar">
+        <img id="logo" src="logo.png" alt="Logo">
+        <a class="nav-link" href="#" onclick="loadPage('about_urbp.html')">About URBP</a>
+        <a class="nav-link" href="#" onclick="loadPage('games.html')">Games</a>
+    </div>
+    <div id="content">
+        <h2>Welcome to My Web Page</h2>
+        <p>This is the initial content of the page.</p>
+    </div>
+    <script>
+        function loadPage(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => document.getElementById('content').innerHTML = data)
+                .catch(error => console.error('Error loading the page:', error));
+        }
+    </script>
+</body>
+</html>
