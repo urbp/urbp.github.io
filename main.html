@@ -8,6 +8,9 @@
         body {
             margin: 0;
             font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         #menuBar {
             background-color: #1A1A1A;
@@ -26,23 +29,38 @@
         .nav-link {
             margin-right: 20px;
             text-decoration: none;
-            color: #333333;
+            color: #F0F0F0;
         }
         #content {
+		    background-color: #333333;
+			color: #F0F0F0;
             margin-top: 60px;
             padding: 20px;
+			flex: 1;
+        }
+        #footer {
+            background-color: #1A1A1A;
+            color: #F0F0F0;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <div id="menuBar">
-        <img id="logo" src="logo.png" alt="Logo">
+        <img id="logo" src="image\logo.png" alt="Logo">
         <a class="nav-link" href="#" onclick="loadPage('about_urbp.html')">About URBP</a>
         <a class="nav-link" href="#" onclick="loadPage('games.html')">Games</a>
     </div>
     <div id="content">
         <h2>Welcome to My Web Page</h2>
         <p>This is the initial content of the page.</p>
+    </div>
+    <div id="footer">
+        Copyright @ 2024 URBP INC.
     </div>
     <script>
         function loadPage(page) {
